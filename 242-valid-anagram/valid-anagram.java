@@ -14,7 +14,7 @@ class Solution {
         // return Arrays.equals(arr1,arr2);
 
         // Method 2:- Using Frequency Table
-        int []frequencyTable = new int[256];
+        int [] frequencyTable = new int [256];
 
         for(int i=0;i<s.length();i++)
         {
@@ -22,13 +22,15 @@ class Solution {
             frequencyTable[t.charAt(i)]--;
         }
 
-        for(int i=0;i<256;i++)
-        {
-            if(frequencyTable[i] != 0)
+            for(int i=0;i<256;i++)
             {
-                return false;
+                if(frequencyTable[i] != 0)
+                {
+                    return false;
+                }
             }
-        }
-        return true;
+
+    return true;
+        
     }
 }
