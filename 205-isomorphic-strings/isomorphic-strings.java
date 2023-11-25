@@ -1,6 +1,6 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        int n = s.length();
+        
         if(s.length() != t.length())
         {
             return false;
@@ -8,8 +8,8 @@ class Solution {
 
         HashMap <Character,Character> map1 = new HashMap<>();
         HashMap <Character,Boolean> map2 = new HashMap<>();
-
-        for(int i=0;i<n;i++)
+        
+        for(int i=0;i<s.length();i++)
         {
             char ch1 = s.charAt(i);
             char ch2 = t.charAt(i);
@@ -23,7 +23,7 @@ class Solution {
             }
             else
             {
-                if(map2.containsKey(ch2) == true)
+                if(map2.containsKey(ch2)==true)
                 {
                     return false;
                 }
