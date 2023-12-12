@@ -20,18 +20,18 @@ class Solution {
         if(head==null || head.next==null || head.next.next==null) return ans;
 
         ArrayList<Integer> arr = new ArrayList<>();
-        ListNode t = head.next;
+        ListNode current = head.next;
 
         ListNode prev = head;
         int idx = 1;
 
-        while(t.next!=null){
-            if(t.val>prev.val && t.val>t.next.val) arr.add(idx);
-            if(t.val<prev.val && t.val<t.next.val) arr.add(idx);
+        while(current.next!=null){
+            if(current.val>prev.val && current.val>current.next.val) arr.add(idx);
+            if(current.val<prev.val && current.val<current.next.val) arr.add(idx);
 
             idx++;
-            prev = t;
-            t=t.next;
+            prev = current;
+            current=current.next;
         }
 
        
