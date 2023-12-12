@@ -20,9 +20,11 @@ class Solution {
         if(head==null || head.next==null || head.next.next==null) return ans;
 
         ArrayList<Integer> arr = new ArrayList<>();
-        ListNode current = head.next;
+        
 
         ListNode prev = head;
+        ListNode current = head.next;
+        
         int idx = 1;
 
         while(current.next!=null){
@@ -37,13 +39,16 @@ class Solution {
        
         if(arr.size()<2) return ans;
         
-        ans[1] = arr.get(arr.size()-1) - arr.get(0);
+        
         int min = Integer.MAX_VALUE;
 
         for(int i=1; i<arr.size(); i++){
             min = Math.min(arr.get(i)-arr.get(i-1),min);
         }
+        
         ans[0] = min;
+        ans[1] = arr.get(arr.size()-1) - arr.get(0);
+
         return ans;
 
     }
