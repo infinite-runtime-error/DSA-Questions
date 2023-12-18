@@ -1,34 +1,33 @@
 class Solution {
-    static boolean checkPalindrome(String s,int i,int j)
+    static boolean checkPalindrome(String s,int start,int end)
     {
-        while(i<=j)
+        while(start<=end)
         {
-            if(s.charAt(i)!=s.charAt(j))
+            if(s.charAt(start)!=s.charAt(end))
             {
                 return false;
             }
             else
             {
-                i++;
-                j--;
+                start++;
+                end--;
             }
         }
         return true;
     }
    public boolean validPalindrome(String s) {
-    int i=0;
-    int j=s.length()-1;
-
-    while(i<=j)
+    int start=0;
+    int end=s.length()-1;
+    while(start<=end)
     {
-        if(s.charAt(i)!=s.charAt(j))
+        if(s.charAt(start)!=s.charAt(end))
         {
-            return checkPalindrome(s,i+1,j) || checkPalindrome(s,i,j-1);
+            return checkPalindrome(s,start+1,end) || checkPalindrome(s,start,end-1);
         }
         else
         {
-            i++;
-            j--;
+            start++;
+            end--;
         }
     }
     return true;
