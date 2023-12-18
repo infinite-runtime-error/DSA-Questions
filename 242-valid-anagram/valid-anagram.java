@@ -15,22 +15,19 @@ class Solution {
 
         // Method 2:- Using Frequency Table
         int [] frequencyTable = new int [256];
-
         for(int i=0;i<s.length();i++)
         {
             frequencyTable[s.charAt(i)]++;
             frequencyTable[t.charAt(i)]--;
         }
 
-            for(int i=0;i<256;i++)
+        for(int i=0;i<256;i++)
+        {
+            if(frequencyTable[i] != 0)
             {
-                if(frequencyTable[i] != 0)
-                {
-                    return false;
-                }
+                return false;
             }
-
-    return true;
-        
+        }
+        return true;
     }
 }
