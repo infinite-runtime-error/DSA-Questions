@@ -2,8 +2,8 @@ class Solution {
     public String removeDuplicates(String s) {
         // Creating A StringBuilder , because it is only mutable String in Java
         StringBuilder sb = new StringBuilder(s);
-        int i = 0;
-        int j = 1;
+        int i=0;
+        int j=1;
         while(j<sb.length())
         {
             if(sb.charAt(i)==sb.charAt(j))
@@ -15,13 +15,15 @@ class Solution {
                 {
                     i--;
                 }
+
                 if(j!=1)
                 {
                     j--;
                 }
 
             }
-            else 
+            
+            else
             {
                 i++;
                 j++;
