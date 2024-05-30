@@ -15,7 +15,24 @@ public:
         return nums.size();
     }
 
+    int XOR(vector<int>& nums){
+        int ans = 0;
+
+        // XOR all elements in vector
+        for(int i=0;i<nums.size();i++){
+            ans ^= nums[i];
+        }
+
+        // XOR all ranges [0,N]
+        for(int i=0;i<=nums.size();i++){
+            ans ^= i;
+        }
+
+        return ans;
+    }
+
     int missingNumber(vector<int>& nums) {
-        return sortingMethod(nums);
+        // return sortingMethod(nums);
+        return XOR(nums);
     }
 };
